@@ -43,6 +43,22 @@ namespace IDE
             set { m_chkOptimiseCode.Checked = value; }
         }
 
+        public int DebuggerTimerIntervalMs
+        {
+            get
+            {
+                if (!int.TryParse(m_txtTimerInterval.Text, out var ms)) ms = 50;
+                if (ms < 1) ms = 1;
+                return ms;
+            }
+            set
+            {
+                if (value < 1) value = 1;
+                m_txtTimerInterval.Text = value.ToString();
+            }
+        }
+
         #endregion;
     }
+
 }
