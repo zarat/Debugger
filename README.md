@@ -1,4 +1,4 @@
 # Debugger
-[ScriptStack](https://github.com/zarat/scriptstack) Debugger and IDE
+[ScriptStack](https://github.com/zarat/scriptstack) Debugger 
 
 ![Debugger GUI](debugger.PNG)
