@@ -142,6 +142,10 @@ namespace IDE
 
             UpdateInterface();
 
+            // create standard template
+            txtScript.Text = "/*\r\nTitle: New script\r\nCreated: " + DateTime.Now.ToString() + "\r\n*/\r\n\r\nfunction main() {\r\n\r\n\tPrint(\"Hello ScriptStack!\");\r\n\r\n}";
+            txtScript.Select(0,0);
+
             return txtScript;
         }
 
@@ -1345,3 +1349,4 @@ namespace IDE
     }
 
 }
+
