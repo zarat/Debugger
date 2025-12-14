@@ -1042,9 +1042,11 @@ namespace IDE
             BuildSettingsForm buildSettingsForm = new BuildSettingsForm();
             buildSettingsForm.DebugMode = m_scriptManager.Debug;
             buildSettingsForm.OptimiseCode = m_scriptManager.Optimize;
+            buildSettingsForm.DebuggerTimerIntervalMs = m_tmrDebugger.Interval;
             if (buildSettingsForm.ShowDialog(this) == DialogResult.Cancel) return;
             m_scriptManager.Debug = buildSettingsForm.DebugMode;
             m_scriptManager.Optimize = buildSettingsForm.OptimiseCode;
+            m_tmrDebugger.Interval = buildSettingsForm.DebuggerTimerIntervalMs;
         }
 
         private void m_mniBuildHostEnvironment_Click(object objectSender, EventArgs eventArgs)
@@ -1341,4 +1343,5 @@ namespace IDE
 
         #endregion
     }
+
 }
