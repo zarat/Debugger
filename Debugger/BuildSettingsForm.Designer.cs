@@ -28,6 +28,26 @@ namespace IDE
         /// </summary>
         private void InitializeComponent()
         {
+
+            // --- UI controls dynamisch hinzufügen ---
+            m_lblTimerInterval = new Label();
+            m_lblTimerInterval.AutoSize = true;
+            m_lblTimerInterval.Text = "Timer Interval (ms):";
+            m_lblTimerInterval.Location = new Point(12, 12);
+            
+            m_txtTimerInterval = new TextBox();
+            m_txtTimerInterval.Name = "m_txtTimerInterval";
+            m_txtTimerInterval.Location = new Point(140, 9);
+            m_txtTimerInterval.Width = 80;
+            m_txtTimerInterval.KeyPress += (s, e) =>
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                    e.Handled = true;
+            };
+            
+            Controls.Add(m_lblTimerInterval);
+            Controls.Add(m_txtTimerInterval);
+            
             this.m_chkDebugMode = new System.Windows.Forms.CheckBox();
             this.m_chkOptimiseCode = new System.Windows.Forms.CheckBox();
             this.m_btnOk = new System.Windows.Forms.Button();
@@ -102,6 +122,9 @@ namespace IDE
         private System.Windows.Forms.CheckBox m_chkOptimiseCode;
         private System.Windows.Forms.Button m_btnOk;
         private System.Windows.Forms.Button m_btnCancel;
+        private TextBox m_txtTimerInterval;
+        private Label m_lblTimerInterval;
 
     }
+
 }
