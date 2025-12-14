@@ -33,18 +33,20 @@ namespace IDE
             m_lblTimerInterval = new Label();
             m_lblTimerInterval.AutoSize = true;
             m_lblTimerInterval.Text = "Timer Interval (ms):";
-            m_lblTimerInterval.Location = new Point(12, 12);
+            m_lblTimerInterval.Location = new Point(12, 60);
             
             m_txtTimerInterval = new TextBox();
             m_txtTimerInterval.Name = "m_txtTimerInterval";
-            m_txtTimerInterval.Location = new Point(140, 9);
+            m_txtTimerInterval.Location = new Point(140, 60);
             m_txtTimerInterval.Width = 80;
             m_txtTimerInterval.KeyPress += (s, e) =>
             {
                 if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                     e.Handled = true;
             };
-            
+
+            this.Height = Math.Max(this.Height, 320);
+
             Controls.Add(m_lblTimerInterval);
             Controls.Add(m_txtTimerInterval);
             
@@ -76,7 +78,7 @@ namespace IDE
             // 
             // m_btnOk
             // 
-            this.m_btnOk.Location = new System.Drawing.Point(116, 79);
+            this.m_btnOk.Location = new System.Drawing.Point(116, 95);
             this.m_btnOk.Name = "m_btnOk";
             this.m_btnOk.Size = new System.Drawing.Size(75, 23);
             this.m_btnOk.TabIndex = 2;
@@ -87,7 +89,7 @@ namespace IDE
             // m_btnCancel
             // 
             this.m_btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.m_btnCancel.Location = new System.Drawing.Point(197, 79);
+            this.m_btnCancel.Location = new System.Drawing.Point(197, 95);
             this.m_btnCancel.Name = "m_btnCancel";
             this.m_btnCancel.Size = new System.Drawing.Size(75, 23);
             this.m_btnCancel.TabIndex = 3;
@@ -100,7 +102,7 @@ namespace IDE
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.m_btnCancel;
-            this.ClientSize = new System.Drawing.Size(284, 114);
+            this.ClientSize = new System.Drawing.Size(284, 124);
             this.Controls.Add(this.m_btnCancel);
             this.Controls.Add(this.m_btnOk);
             this.Controls.Add(this.m_chkOptimiseCode);
