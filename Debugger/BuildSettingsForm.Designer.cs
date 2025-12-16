@@ -39,11 +39,13 @@ namespace IDE
             m_txtTimerInterval.Name = "m_txtTimerInterval";
             m_txtTimerInterval.Location = new Point(140, 60);
             m_txtTimerInterval.Width = 80;
+            /*
             m_txtTimerInterval.KeyPress += (s, e) =>
             {
                 if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                     e.Handled = true;
             };
+            */
 
             this.Height = Math.Max(this.Height, 320);
 
@@ -130,3 +132,4 @@ namespace IDE
     }
 
 }
+
