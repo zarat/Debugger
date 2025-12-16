@@ -25,6 +25,11 @@ namespace IDE
         public BuildSettingsForm()
         {
             InitializeComponent();
+            m_txtTimerInterval.KeyPress += (s, e) =>
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                    e.Handled = true;
+            };
         }
 
         #endregion
@@ -62,3 +67,4 @@ namespace IDE
     }
 
 }
+
