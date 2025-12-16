@@ -215,7 +215,7 @@ namespace IDE
                 && m_scriptHistoryManager.CanRedo(strScriptName);
             m_mniEditCut.Enabled = bOpenScripts && !bActive;
             m_mniEditCopy.Enabled = bOpenScripts && !bActive;
-            m_mniEditPaste.Enabled = bOpenScripts && !bActive && Clipboard.ContainsText();
+            m_mniEditPaste.Enabled = bOpenScripts && !bActive; // && Clipboard.ContainsText();
 
             m_mniBuild.Enabled = !bActive;
             m_mniBuildScript.Enabled = bOpenScripts && bEditor;
@@ -1349,4 +1349,5 @@ namespace IDE
     }
 
 }
+
 
